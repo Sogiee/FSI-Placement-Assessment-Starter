@@ -1,27 +1,64 @@
-// HINT: You can delete this console.log after you no longer need it!
-console.log('JavaScript code has loaded!')
-// First, tell us your name
-let yourName = "Jane Doe" // HINT: Replace this with your own name!
+let yourName = "Logan Sawyer" // HINT: Replace this with your own name!
+const credit = document.querySelector('#credit')
+credit.textContent = `Created by ${yourName}`
 
 // We'll use these variables to track the counts of each cookie type
 let gb = 0 // Gingerbread
 let cc = 0 // Chocolate Chip
 let sugar = 0 // Sugar Sprinkle
+let gbTotal = document.querySelector('#qty-gb')
+let ccTotal = document.querySelector('#qty-cc')
+let sugarTotal = document.querySelector('#qty-sugar')
+let total = document.querySelector('#qty-total')
 
-// selecting the element with an id of credit
-const credit = document.querySelector('#credit')
-// selecting the element with an id of add-gb
+// GINGERBREAD 
 const gbPlusBtn = document.querySelector('#add-gb')
-
-// Code to update name display
-credit.textContent = `Created by ${yourName}`
-
-// Event listener for clicks on the "+" button for Gingerbread cookies
 gbPlusBtn.addEventListener('click', function() {
-// HINT: You can delete this console.log after you no longer need it!
-console.log('Gingerbread + button was clicked!')
-
-// TODO: Write the code to be run when the "+" button for "Gingerbread" is clicked
+    gb++
+    gbTotal.textContent=gb
+    total.textContent=sugar+gb+cc
+    console.log('Gingerbread + button was clicked!')
 })
 
-// TODO: Hook up event listeners for the rest of the buttons
+const gbMinusBtn = document.querySelector('#minus-gb')
+gbMinusBtn.addEventListener('click', function() {
+    gb--
+    gbTotal.textContent=gb
+    total.textContent=sugar+gb+cc
+    console.log('Gingerbread - button was clicked!')
+})
+
+// CHOCOLATE CHIP
+const ccPlusBtn = document.querySelector('#add-cc')
+ccPlusBtn.addEventListener('click', function() {
+    cc++
+    ccTotal.textContent=cc
+    total.textContent=sugar+gb+cc
+    console.log('Chocolate Chip Cookie + button was clicked!')
+})
+
+const ccMinusBtn = document.querySelector('#minus-cc')
+ccMinusBtn.addEventListener('click', function() {
+    cc--
+    ccTotal.textContent=cc
+    total.textContent=sugar+gb+cc
+    console.log('Chocolate Chip Cookie - button was clicked!')
+})
+
+// SUGAR
+const sugarPlusBtn = document.querySelector('#add-sugar')
+sugarPlusBtn.addEventListener('click', function() {
+    sugar++
+    sugarTotal.textContent=sugar
+    total.textContent=gb+sugar+cc
+    console.log('Sugar Cookie + button was clicked!')
+})
+
+const sugarMinusBtn = document.querySelector('#minus-sugar')
+sugarMinusBtn.addEventListener('click', function() {
+    sugar--
+    sugarTotal.textContent=sugar
+    total.textContent=sugar+cc+gb
+    console.log('Sugar Cookie - button was clicked!')
+})
+//I DID IT
